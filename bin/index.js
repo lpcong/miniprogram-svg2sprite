@@ -25,7 +25,7 @@ if (argv.v || argv.version) {
         '',
         'options: -n   --name       sprite name(default: miniprogram-sprite)',
         '         -t   --timestamp  using timestamp in sprite name',
-        '         --nosize          make style file without width/height attributes',
+        '         --nosize          make style file without width&height attributes',
     ].join('\n'));
     process.exit();
 }

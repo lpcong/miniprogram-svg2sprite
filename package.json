@@ -1,7 +1,7 @@
 {
   "name": "miniprogram-svg2sprite",
-  "version": "0.0.1",
-  "description": "svg图标合成小程序使用的svg雪碧图",
+  "version": "0.0.3",
+  "description": "svg图标合成小程序使用的svg雪碧图和对应的wxss样式",
   "main": "index.js",
   "scripts": {
     "test": "node test/index"
@@ -12,10 +12,14 @@
   },
   "keywords": [
     "小程序",
+    "miniprogram",
     "svg",
-    "svg雪碧图",
+    "雪碧图",
     "wxss"
   ],
+  "bin": {
+    "svg2sprite": "./bin/index.js"
+  },
   "author": "andypliang",
   "license": "ISC",
   "devDependencies": {
