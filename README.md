@@ -17,11 +17,11 @@ svg2sprite(opts);
 ```
 
 opts是可选的配置参数，具体如下：
-#### src：
-svg列表目录，default：当前目录下的svg文件夹
+### src：
+svg列表目录，default：当前目录下的svg目录
 
-#### dest：
-生成svg雪碧图和对应wxss样式文件的目标目录，default：当前目录下的dest文件夹
+### dest：
+生成svg雪碧图和对应wxss样式文件的目标目录，default：当前目录下的dest目录
 
 ### spriteName：
 雪碧图名称，default：miniprogram-sprite
@@ -33,7 +33,7 @@ svg列表目录，default：当前目录下的svg文件夹
 样式文件是否需要生成图标对应的宽高尺寸样式，defautl：false
 
 ### publishConfig：
-文件发布的配置，**小程序内样式文件不能直接引用本地图片文件，需上传到服务器**，本例中使用的是腾讯云的对象存储。如有其它需要可重写src/libs/publishFile上传
+文件发布的配置，**小程序内样式文件不能直接引用本地图片文件，需发布到服务器再引用**，本例中使用的是腾讯云的对象存储。如有其它需要可重写src/libs/publishFile上传
 
 完整调用例子：
 ```javascript
