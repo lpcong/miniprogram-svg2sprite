@@ -33,7 +33,7 @@ svg列表目录，default：当前目录下的svg文件夹
 样式文件是否需要生成图标对应的宽高尺寸样式，defautl：false
 
 ### publishConfig：
-文件发布的配置，本例中使用的是腾讯云的对象存储。如有其它需要可重写src/libs/publishFile上传
+文件发布的配置，**小程序内样式文件不能直接引用本地图片文件，需上传到服务器**，本例中使用的是腾讯云的对象存储。如有其它需要可重写src/libs/publishFile上传
 
 完整调用例子：
 ```javascript
