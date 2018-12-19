@@ -1,0 +1,25 @@
+{
+  "name": "miniprogram-svg2sprite",
+  "version": "0.0.1",
+  "description": "svg图标合成小程序使用的svg雪碧图",
+  "main": "index.js",
+  "scripts": {
+    "test": "node test/index"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/lpcong/miniprogram-svg2sprite.git"
+  },
+  "keywords": [
+    "小程序",
+    "svg",
+    "svg雪碧图",
+    "wxss"
+  ],
+  "author": "andypliang",
+  "license": "ISC",
+  "devDependencies": {
+    "cos-nodejs-sdk-v5": "^2.5.1",
+    "svg-sprite": "^1.5.0"
+  }
+}
