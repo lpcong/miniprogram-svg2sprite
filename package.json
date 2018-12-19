@@ -1,6 +1,6 @@
 {
   "name": "miniprogram-svg2sprite",
-  "version": "0.0.3",
+  "version": "0.0.5",
   "description": "svg图标合成小程序使用的svg雪碧图和对应的wxss样式",
   "main": "index.js",
   "scripts": {
@@ -22,8 +22,9 @@
   },
   "author": "andypliang",
   "license": "ISC",
-  "devDependencies": {
+  "dependencies": {
     "cos-nodejs-sdk-v5": "^2.5.1",
-    "svg-sprite": "^1.5.0"
+    "svg-sprite": "^1.5.0",
+    "mkdirp": "0.5.1"
   }
 }

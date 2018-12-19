@@ -2,32 +2,35 @@
  * @Author: andypliang 
  * @Date: 2018-12-18 19:16:28 
  * @Last Modified by: andypliang
- * @Last Modified time: 2018-12-19 13:06:26
+ * @Last Modified time: 2018-12-19 16:36:45
  */
 
 const fs = require('fs');
 const path = require('path');
 const CONSTS = require('./consts');
 const COS = require('cos-nodejs-sdk-v5');
-const publish = CONSTS.publish;
-const publishConfig = publish.config;
-const cos = new COS({
-    SecretId: publishConfig.SecretId,
-    SecretKey: publishConfig.SecretKey
-});
 
-module.exports = function(src, cb) {
+module.exports = function(src, publishConfig, cb) {
     if (!src) throw new Error(`empty upload source: ${err}`);
-    if (!publishConfig.SecretId) throw new Error(`上传配置为空，请在/src/libs/consts.js中加入你的上传配置`);
+    const config = publishConfig.config || {};
+    const cos = new COS({
+        SecretId: config.SecretId,
+        SecretKey: config.SecretKey
+    });
     const fileName = path.basename(src);
+    if (!publishConfig.remoteDomain) {
+        console.log(`上传配置为空，可在/miniprogram-svg2sprite/src/libs/consts.js中加入你的上传配置`);
+        cb && cb(fileName);
+        return;
+    }
     cos.sliceUploadFile({
-        Bucket: publishConfig.Bucket,
-        Region: publishConfig.Region,
-        Key: `${publish.remotePath}${fileName}`,
+        Bucket: config.Bucket,
+        Region: config.Region,
+        Key: `${publishConfig.remotePath}${fileName}`,
         FilePath: src
     }, (err) => {
         if (err) throw new Error(`upload file error: ${err}`);
-        const remoteFile = `${publish.remoteDomain}${publish.remotePath}${fileName}`;
+        const remoteFile = `${publishConfig.remoteDomain}${publishConfig.remotePath}${fileName}`;
         console.log('publish done:', remoteFile);
         cb && cb(remoteFile);
     });
